@@ -1,37 +1,49 @@
-# 🐚 Modern C++ Shell
+# Modern C++ Shell
 
-A minimal Unix shell implemented in **modern C++**, featuring command execution, piping, history, tab completion, output redirection, arrow history navigation and some built-in commands.
+A minimal Unix shell implemented in **modern C++**, featuring command execution, piping, command history, tab completion, output redirection, arrow key navigation, and several built-in commands.
 
 ---
 
-## 🚀 Features
+## Features
 
-- ✅ **Built-in commands**:
+- **Built-in Commands**:
   - `cd`, `pwd`, `exit`, `echo`, `type`, `history`
-- ✅ **External commands**:
-  - Supports any binary found in your system's $PATH, such as:
-  `ls`, `cat`, `grep`, `mkdir`, `touch`, `rm`, `pwd`, `tail`, etc..
-- ✅ **Pipes**:
-  - Full support for `|` operator (e.g. `ls | grep txt`)
-- ✅ **Redirection**:
-  - `>`, `>>`, `2>`, `2>>` for stdout/stderr
-- ✅ **Quote-aware parser**: 
-  Handles `'single'`, `"double"`, and escaped `\` characters
-- ✅ **Command history**:
-  - `HISTFILE` support with persistent history
-  - `history -r <file>` — read from file
-  - `history -w <file>` — write to file
-  - `history -a <file>` — append session history
-- ✅ **Arrow Navigation**: 
-  - Use Arrows to execute the last used commands
-- ✅ **Auto-completion**: 
-  - Tab-complete built-ins and executables via `readline`
-  
+
+- **External Commands**:
+  - Executes any binary available in your system’s `$PATH`, such as:
+    `ls`, `cat`, `grep`, `mkdir`, `touch`, `rm`, `pwd`, `tail`, etc.
+
+- **Piping**:
+  - Full support for the `|` operator  
+    _Example_: `ls | grep txt`
+
+- **Redirection**:
+  - `>` — overwrite stdout  
+  - `>>` — append stdout  
+  - `2>` — overwrite stderr  
+  - `2>>` — append stderr
+
+- **Quote-aware Parser**:
+  - Properly handles `'single'`, `"double"` quotes, and escaped `\` characters
+
+- **Command History**:
+  - Persistent history using `HISTFILE`
+  - Options:
+    - `history -r <file>` — read from file
+    - `history -w <file>` — write to file
+    - `history -a <file>` — append session history
+
+- **Arrow Key Navigation**:
+  - Navigate and reuse previous commands using arrow keys
+
+- **Auto-completion**:
+  - Tab-completion for built-in commands and executables using `readline`
+
 ---
 
-## 📚 How to Build
+## How to Build
 
-Ensure dependencies are installed and build the executable
+Make sure required dependencies are installed, then build and run the project:
 
 ```sh
 sudo apt install cmake libreadline-dev
@@ -42,7 +54,7 @@ chmod +x buildProject.sh
 
 ---
 
-## 📂 Example Session
+## Example Session
 
 ```sh
 $ echo Hello World
@@ -63,14 +75,13 @@ $ history
 
 ---
 
-## 🛠️ Architecture Overview
+## Architecture Overview
 
-| File(s)                     | Responsibility                                        |
-|----------------------------|--------------------------------------------------------|
-| `main.cpp`                 | History management and program entry point             |
-| `shell.cpp` / `shell.hpp`  | REPL loop, pipeline execution, and tab-completion      |
-| `utils.cpp` / `utils.hpp`  | Tokenizer, `$PATH` search, external command helpers    |
-| `builtins.cpp` / `builtins.hpp` | Built-in commands (`cd`, `pwd`, `echo`, etc.) implementation |
+| File(s)                        | Description                                              |
+|-------------------------------|----------------------------------------------------------|
+| `main.cpp`                    | Program entry point and history management               |
+| `shell.cpp`, `shell.hpp`     | REPL loop, command pipeline execution, tab-completion    |
+| `utils.cpp`, `utils.hpp`     | Tokenization, `$PATH` search, external command handling  |
+| `builtins.cpp`, `builtins.hpp` | Implementation of built-in commands (`cd`, `pwd`, etc.) |
 
 ![Shell Class Diagram](diagrams/shell_diagram.png)
-
