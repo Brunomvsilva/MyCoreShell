@@ -84,4 +84,8 @@ $ history
 | `utils.cpp`, `utils.hpp`     | Tokenization, `$PATH` search, external command handling  |
 | `builtins.cpp`, `builtins.hpp` | Implementation of built-in commands (`cd`, `pwd`, etc.) |
 
+---
+
+## Class Diagram (PlantUML)
+
 ![Shell Class Diagram](diagrams/shell_diagram.png)
