@@ -72,5 +72,5 @@ $ history
 | `utils.cpp` / `utils.hpp`  | Tokenizer, `$PATH` search, external command helpers    |
 | `builtins.cpp` / `builtins.hpp` | Built-in commands (`cd`, `pwd`, `echo`, etc.) implementation |
 
-![Shell Class Diagram](diagram/shell_diagram.png)
+![Shell Class Diagram](diagrams/shell_diagram.png)
 
