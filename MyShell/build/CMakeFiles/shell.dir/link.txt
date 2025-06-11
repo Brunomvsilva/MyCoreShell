@@ -1,0 +1,1 @@
+/usr/bin/g++ CMakeFiles/shell.dir/src/builtins.cpp.o CMakeFiles/shell.dir/src/main.cpp.o CMakeFiles/shell.dir/src/shell.cpp.o CMakeFiles/shell.dir/src/utils.cpp.o -o shell  -lreadline 

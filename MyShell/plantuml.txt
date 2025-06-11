@@ -1,0 +1,54 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' Place abstract base class in center
+abstract class ShellCommand {
+    +run(ctx: CommandContext): void
+}
+
+class EchoCommand
+class ExitCommand
+class TypeCommand
+class PwdCommand
+class CdCommand
+class HistoryCommand
+
+ShellCommand <|-- EchoCommand
+ShellCommand <|-- ExitCommand
+ShellCommand <|-- TypeCommand
+ShellCommand <|-- PwdCommand
+ShellCommand <|-- CdCommand
+ShellCommand <|-- HistoryCommand
+
+' Supporting data structure
+class CommandContext {
+    - argv: vector<string>
+    - argc: int
+    - outputRedirectPath: string
+    - outputAppend: bool
+    - errorRedirectPath: string
+    - errorAppend: bool
+}
+
+' Utility class (used as functions)
+class Utils <<utility>> {
+    +tokenizeInput(s: string): vector<string>
+    +locateExecutable(name: string): string
+    +buildCommandContext(s: string): CommandContext
+    +launchExternalProcess(ctx: CommandContext): void
+}
+
+' Main shell engine
+class Shell {
+    +run(): void
+    -dispatch(ctx: CommandContext): void
+    -executePipeline(stages: vector<CommandContext>): void
+    -stripWhitespace(s: string): string
+}
+
+' Relationships
+Shell --> ShellCommand : uses
+Shell --> CommandContext : uses
+Shell --> Utils : uses
+Shell --> "builtins: map<string, unique_ptr<ShellCommand>>" : accesses
+@enduml

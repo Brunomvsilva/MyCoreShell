@@ -1,0 +1,3 @@
+/home/bruno-silva/Downloads/MyShell-main/MyShell/build/CMakeFiles/shell.dir
+/home/bruno-silva/Downloads/MyShell-main/MyShell/build/CMakeFiles/edit_cache.dir
+/home/bruno-silva/Downloads/MyShell-main/MyShell/build/CMakeFiles/rebuild_cache.dir
