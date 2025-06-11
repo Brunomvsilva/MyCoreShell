@@ -1,6 +1,6 @@
 # My C++ Shell
 
-A minimal yet powerful Unix shell implemented in **modern C++**, featuring command execution, piping, history, tab completion, redirection, and built-in commands. Clean architecture, idiomatic C++17, and full readline support — all in under ~1k lines of well-documented code.
+A minimalUnix shell implemented in **modern C++**, featuring command execution, piping, history, arrow history navigation, tab completion, output redirection, and some built-in commands.
 
 ---
 
@@ -8,8 +8,9 @@ A minimal yet powerful Unix shell implemented in **modern C++**, featuring comma
 
 - ✅ **Built-in commands**:  
   `cd`, `pwd`, `exit`, `echo`, `type`, `history`
-- ✅ **External commands**:  
-  Uses `$PATH` to locate and run binaries
+- ✅ **External commands (executables)**:  
+  Supports any binary found in your system's `$PATH`, such as:  
+  `ls`, `cat`, `grep`, `echo`, `mkdir`, `touch`, `rm`, `pwd`, `tail`, etc..
 - ✅ **Pipes**:  
   Full support for `|` operator (e.g. `ls | grep txt`)
 - ✅ **Redirection**:  
@@ -21,9 +22,23 @@ A minimal yet powerful Unix shell implemented in **modern C++**, featuring comma
   - `history -r <file>` — read from file
   - `history -w <file>` — write to file
   - `history -a <file>` — append session history
+- ✅ **Arrow Navigation**:
+  - Use Arrows to execute the last used commands  
 - ✅ **Auto-completion**:  
   Tab-complete built-ins and executables via `readline`
 
+---
+
+## 📚 How to Build
+
+Ensure dependencies are installed and build executable:
+
+```sh
+sudo apt install cmake libreadline-dev
+chmod +x buildProject.sh
+./buildProject.sh
+./build/shell
+```
 ---
 
 ## 📂 Example Session
