@@ -1,6 +1,6 @@
 # C++ Shell
 
-A minimal Unix shell implemented in **modern C++**, featuring command execution, piping, command history, tab completion, output redirection, arrow key navigation, and several built-in commands.
+A minimal Unix shell implemented in **C++**, featuring command execution, piping, command history, tab completion, output redirection, arrow key navigation, and several built-in commands.
 
 ---
 
@@ -46,7 +46,7 @@ A minimal Unix shell implemented in **modern C++**, featuring command execution,
 Make sure required dependencies are installed, then build and run the project:
 
 ```sh
-sudo apt install cmake libreadline-dev
+
 chmod +x buildProject.sh
 ./buildProject.sh
 ./build/shell
