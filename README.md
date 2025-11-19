@@ -1,6 +1,6 @@
 # C++ Shell
 
-A minimal Unix shell implemented in **C++**, featuring command execution, piping, command history, tab completion, output redirection, arrow key navigation, and several built-in commands.
+A simple Unix shell implemented in **C++**, featuring command execution, piping, command history, tab completion, output redirection, arrow key navigation, and several built-in commands.
 
 ---
 
